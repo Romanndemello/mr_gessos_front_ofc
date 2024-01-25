@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { src = '/background_photo.jpg' } = Astro.props
+---
+
+<section class="hero my-24">
+  <div class="container">
+    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+      <div class="flex flex-col items-center gap-8 md:items-start">
+        <s1 class="text-center text-7xl md:text-left lg:text-7xl">
+          <slot><span class="text-secondary-100">Mendes & Rosa</span></slot>
+        </s1>
+        <s1 class="text-center text-secondary-100 text-4xl md:text-left lg:text-2xl">
+          <slot><span>Somos uma empresa familiar com sede em Lisboa,</span></slot>
+          <slot><span>dedicada a cativar nossos clientes. Comprometemo-nos</span></slot>
+          <slot><span>com um atendimento confiável, priorizando</span></slot>
+          <slot><span>pontualidade, qualidade e máxima comodidade.</span></slot>
+        </s1>
+        <div class="flex flex-col gap-3 min-[600px]:flex-row">
+          <a class="button has-icon" href="https://github.com/markteekman/accessible-astro-starter">
+            <Icon name="ion:cash" />
+            Faça um orçamento
+          </a>
+        </div>
+      </div>
+      <img class="custom-image hidden lg:block" src={src} alt="" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .custom-image {
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  }
+  .text-gradient {
+    background: linear-gradient(315deg, var(--secondary-200) 15%, var(--neutral-100));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.darkmode .text-gradient) {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
