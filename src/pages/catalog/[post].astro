@@ -1,0 +1,156 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+
+export async function getStaticPaths() {
+  const data = [
+  {
+      "userId": 1,
+      "id": 1,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 6,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 7,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 8,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 9,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 10,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 11,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+    {
+      "userId": 1,
+      "id": 12,
+      "title": "Bolhas - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de bolhas",
+      "footer": "29x29",
+      "img": "/bolhas_fdg_20.jpg"
+    },
+  ]
+
+  return data.map((post) => {
+    return {
+      params: { post: post.title.replaceAll(' ', '-').toLowerCase() },
+      props: { post },
+    }
+  })
+}
+
+const { post } = Astro.props
+---
+
+<DefaultLayout title={post.title} description={post.body} url={post.title}>
+  <div class="container">
+    <div class="mt-12">
+      <Breadcrumbs>
+        <BreadcrumbsItem href="/" label="Home" />
+        <BreadcrumbsItem href="/catalog" label="Catálogo" />
+        <BreadcrumbsItem currentPage={true} label={post.title} />
+      </Breadcrumbs>
+    </div>
+  </div>
+  <section class="my-12">
+    <div class="container">
+      <h1>{post.title}</h1><br />
+      <img src={post.img} width="500px"/>
+      <p>{post.body}</p>
+      <p>{post.footer}</p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <p class="text-2xl">{post.body}</p>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+
+    @media (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

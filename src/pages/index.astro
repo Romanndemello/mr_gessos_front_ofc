@@ -2,6 +2,10 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
+import CallToAction from '../components/CallToAction.astro'
+// import { Card } from 'accessible-astro-components'
+
+const {url='', title='Bolhas - Gesso3D', footer='29x29', body='Placa de gesso 3D com estilo de bolhas', img='/bolhas_fdg_20.jpg'} = Astro.props
 ---
 
 <DefaultLayout title="Home">
@@ -22,25 +26,79 @@ import Feature from '../components/Feature.astro'
       </div>
     </div>
   </section>
-  <!-- <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.1 AA Compliant</h2>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia> -->
-  <section class="mb-32 mt-64">
+  <section class="my-64">
     <div class="container">
+      <div class="container-prod">
+        <h2 class="text-3xl font-semibold">Nossos produtos</h2>
+        <a href="/blog/">Ver mais</a>
+      </div>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 mt-16">
+        <div class="card">
+          <img src={img} alt="Foto do produto" style="width:100%">
+          <h4 class="mt-5">{title}</h4>
+          <s1 class="subtitle">29x29</s1>
+          <s1 class="mx-8 my-2"><span>{body}</span></s1>
+          <!-- <p><button>Add to Cart</button></p> -->
+        </div>
+        <div class="card">
+          <img src={img} alt="Foto do produto" style="width:100%">
+          <h4 class="mt-5">{title}</h4>
+          <s1 class="subtitle">29x29</s1>
+          <s1 class="mx-8 my-2"><span>{body}</span></s1>
+          <!-- <p><button>Add to Cart</button></p> -->
+        </div>
+        <div class="card">
+          <img src={img} alt="Foto do produto" style="width:100%">
+          <h4 class="mt-5">{title}</h4>
+          <s1 class="subtitle">29x29</s1>
+          <s1 class="mx-8 my-2"><span>{body}</span></s1>
+          <!-- <p><button>Add to Cart</button></p> -->
+        </div>
+      </div>
     </div>
   </section>
+  <CallToAction/>
 </DefaultLayout>
+
+
+<style>
+  .container-prod {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+	.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .subtitle {
+    color: grey;
+    font-size: 18px;
+  }
+  .card:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	.card:is(:hover, :focus-within) h4 {
+		color: rgb(var(--accent-light));
+	}
+  /* .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  } */
+
+  .card button:hover {
+    opacity: 0.7;
+  }
+</style>
