@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import { Card, Pagination } from 'accessible-astro-components'
+import { Card } from 'accessible-astro-components'
 
 interface PageData {
   userId?: number;
@@ -20,6 +20,10 @@ interface PaginatedData {
   };
   currentPage: number;
   total: number;
+}
+
+interface AstroProps {
+  page: PaginatedData;
 }
 
 export function getStaticPaths({ paginate }: { paginate: (data: any[], options: { pageSize: number }) => PaginatedData }) {
@@ -125,7 +129,7 @@ export function getStaticPaths({ paginate }: { paginate: (data: any[], options: 
   return paginate(data, { pageSize: 12 })
 }
 export const prerender = true
-const { page } = Astro.props
+const { page } = Astro.props as AstroProps
 ---
 
 <DefaultLayout
@@ -145,8 +149,8 @@ const { page } = Astro.props
       <!-- <p class="text-sm"><em>Placa {page.start + 1} de {page.end + 1} em um total de {page.total}</em></p> -->
       <ul class="my-3">
         {
-          page && page.data && page.data.map((post, index) => (
-            <li key={index}>
+          page && page.data && page.data.map((post) => (
+            <li>
               <Card
                 url={'/catalog/' + post.title.replaceAll(' ', '-').toLowerCase()}
                 title={post.title}
