@@ -122,7 +122,7 @@ export function getStaticPaths({ paginate }: { paginate: (data: any[], options: 
       "img": "/bolhas_fdg_20.jpg"
     },
   ]
-  return paginate(data, { pageSize: 6 })
+  return paginate(data, { pageSize: 12 })
 }
 export const prerender = true
 const { page } = Astro.props
@@ -160,14 +160,14 @@ const { page } = Astro.props
         }
       </ul>
       <div class="mt-12 grid place-content-center">
-        <Pagination
+        <!-- <Pagination
           firstPage={page && page.url.prev ? '/catalog' : null}
           previousPage={page && page.url.prev ? page.url.prev : null}
           nextPage={page && page.url.next ? page.url.next : null}
           lastPage={page && page.url.next ? `/catalog/${Math.round(page.total / page.size)}` : null}
           currentPage={page ? page.currentPage: 1}
           totalPages={page ? Math.round(page.total / page.size): 1}
-        />
+        /> -->
       </div>
     </div>
   </section>
