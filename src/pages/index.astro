@@ -3,9 +3,36 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
 import CallToAction from '../components/CallToAction.astro'
-// import { Card } from 'accessible-astro-components'
-
-const {url='', title='Bolhas - Gesso3D', footer='29x29', body='Placa de gesso 3D com estilo de bolhas', img='/bolhas_fdg_20.jpg'} = Astro.props
+import { Card } from 'accessible-astro-components'
+// const data = [
+//     {
+//       "userId": 1,
+//       "id": 1,
+//       "title": "Bolhas - Gesso3D",
+//       "body": "Placa de gesso 3D com desenho de bolhas",
+//       "footer": "29x29",
+//       "img": "/bolhas_fdg_20.jpg"
+//     },
+//     {
+//       "userId": 1,
+//       "id": 2,
+//       "title": "Chamas - Gesso3D",
+//       "body": "Placa de gesso 3D com desenho de chamas",
+//       "footer": "29x29",
+//       "img": "/chamas_fdg_57.jpg"
+//     },
+//     {
+//       "userId": 1,
+//       "id": 3,
+//       "title": "Cristais - Gesso3D",
+//       "body": "Placa de gesso 3D com desenho de cristais",
+//       "footer": "29x29",
+//       "img": "/cristais_fdg_65.jpg"
+//     },
+//   ]
+  const {url='', title='Bolhas - Gesso3D', footer='29x29', body='Placa de gesso 3D com estilo de bolhas', img='/bolhas_fdg_20.jpg'} = Astro.props
+  const {url2='', title2="Chamas - Gesso3D", footer2='29x29', body2="Placa de gesso 3D com desenho de chamas", img2="/chamas_fdg_57.jpg"} = Astro.props
+  const {url3='', title3="Cristais - Gesso3D", footer3='29x29', body3="Placa de gesso 3D com desenho de cristais", img3="/cristais_fdg_65.jpg"} = Astro.props
 ---
 
 <DefaultLayout title="Home">
@@ -30,33 +57,38 @@ const {url='', title='Bolhas - Gesso3D', footer='29x29', body='Placa de gesso 3D
     <div class="container">
       <div class="container-prod">
         <h2 class="text-3xl font-semibold">Nossos produtos</h2>
-        <a href="/blog/">Ver mais</a>
-      </div>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 mt-16">
-        <div class="card">
-          <img src={img} alt="Foto do produto" style="width:100%">
-          <h4 class="mt-5">{title}</h4>
-          <s1 class="subtitle">29x29</s1>
-          <s1 class="mx-8 my-2"><span>{body}</span></s1>
-          <!-- <p><button>Add to Cart</button></p> -->
-        </div>
-        <div class="card">
-          <img src={img} alt="Foto do produto" style="width:100%">
-          <h4 class="mt-5">{title}</h4>
-          <s1 class="subtitle">29x29</s1>
-          <s1 class="mx-8 my-2"><span>{body}</span></s1>
-          <!-- <p><button>Add to Cart</button></p> -->
-        </div>
-        <div class="card">
-          <img src={img} alt="Foto do produto" style="width:100%">
-          <h4 class="mt-5">{title}</h4>
-          <s1 class="subtitle">29x29</s1>
-          <s1 class="mx-8 my-2"><span>{body}</span></s1>
-          <!-- <p><button>Add to Cart</button></p> -->
-        </div>
+        <a href="/catalog/">Ver mais</a>
       </div>
     </div>
+    <div class="grid grid-cols-3 gap-2 lg:grid-cols-3 lg:grid-cols-3 container">
+      <Card
+        url={'/catalog/' + title.replaceAll(' ', '-').toLowerCase()}
+        title={title}
+        footer={footer}
+        img={img}
+      >
+        {body}
+      </Card>
+      <Card
+        url={'/catalog/' + title2.replaceAll(' ', '-').toLowerCase()}
+        title={title2}
+        footer={footer2}
+        img={img2}
+      >
+        {body}
+      </Card>
+      <Card
+        url={'/catalog/' + title3.replaceAll(' ', '-').toLowerCase()}
+        title={title3}
+        footer={footer3}
+        img={img3}
+      >
+        {body3}
+      </Card>
+    </div>
+    
   </section>
+  
   <CallToAction/>
 </DefaultLayout>
 
@@ -69,7 +101,7 @@ const {url='', title='Bolhas - Gesso3D', footer='29x29', body='Placa de gesso 3D
   }
 	.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 250px;
+    max-width: 20px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -101,4 +133,42 @@ const {url='', title='Bolhas - Gesso3D', footer='29x29', body='Placa de gesso 3D
   .card button:hover {
     opacity: 0.7;
   }
+  .link-card {
+		list-style: none;
+		display: flex;
+		padding: 1px;
+		background-color: #23262d;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	}
+	.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: calc(1.5rem - 1px);
+		border-radius: 8px;
+		color: white;
+		background-color: #23262d;
+		opacity: 0.8;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent-light));
+	}
 </style>

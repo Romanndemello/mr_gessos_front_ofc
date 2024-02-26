@@ -109,7 +109,7 @@ export async function getStaticPaths() {
     }
   })
 }
-
+export const prerender = true
 const { post } = Astro.props
 ---
 
@@ -127,13 +127,13 @@ const { post } = Astro.props
     <div class="container">
       <h1>{post.title}</h1><br />
       <img src={post.img} width="500px"/>
-      <p>{post.body}</p>
       <p>{post.footer}</p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
-      <p class="text-2xl">{post.body}</p>
+      <p class="text-3xl">{post.body}</p>
+      <p class="text-2xl">€29.00</p>
     </div>
   </section>
 </DefaultLayout>
