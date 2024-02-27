@@ -39,8 +39,8 @@ import { Card } from 'accessible-astro-components'
   <Hero />
   <section class="my-64">
     <div class="container">
-      <h2 class="mb-16 text-4xl">Por que escolher a Mendes & Rosa?</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <h1 class="mb-16 text-6x1">Por que escolher a Mendes & Rosa?</h1>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 mt-10">
         <Feature icon="mdi:truck-fast" title="Entrega no local">
           Não se preocupe com o transporte, pois ele está incluso em nossos serviços. Realizamos entregas em toda a região metropolitana de Lisboa, garantindo comodidade e eficiência em cada entrega.
         </Feature>
@@ -56,11 +56,11 @@ import { Card } from 'accessible-astro-components'
   <section class="my-64">
     <div class="container">
       <div class="container-prod">
-        <h2 class="text-3xl font-semibold">Nossos produtos</h2>
-        <a href="/catalog/">Ver mais</a>
+        <h1 class="text-6xl font-semibold mb-10">Nossos produtos</h1>
+        <h5><a href="/catalog/">Ver mais</a></h5>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-2 lg:grid-cols-3 lg:grid-cols-3 container">
+    <div class="grid lg:grid-cols-3 gap-2 xs:grid-cols-1 sm:grid-cols-2 container mt-15">
       <Card
         url={'/catalog/' + title.replaceAll(' ', '-').toLowerCase()}
         title={title}
