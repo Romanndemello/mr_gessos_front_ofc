@@ -4,101 +4,113 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 
 export async function getStaticPaths() {
   const data = [
-  {
+    {
       "userId": 1,
       "id": 1,
       "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "body": "Placa de gesso 3D com desenho de bolhas",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/bolhas_fdg_20.jpg",
+      // "img2": "/bolha3.jpeg"
     },
     {
       "userId": 1,
       "id": 2,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Chamas - Gesso3D",
+      "body": "Placa de gesso 3D com desenho de chamas",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/chamas_fdg_57.jpg",
+      // "img2": "/chamas2.jpg"
     },
     {
       "userId": 1,
       "id": 3,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Cristais - Gesso3D",
+      "body": "Placa de gesso 3D com desenho de cristais",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/cristais_fdg_65.jpg",
+      // "img2": "/cristais2.jpg"
     },
     {
       "userId": 1,
       "id": 4,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Dunas - Gesso3D",
+      "body": "Placa de gesso 3D com desenho de Dunas",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/dunas_fdg_22.jpg",
+      // "img2": "/dunas2.jpg"
     },
     {
       "userId": 1,
       "id": 5,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Impress - Gesso3D",
+      "body": "Placa de gesso 3D com estilo impress",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/impress_fdg_122.jpg",
+      "img2": "/impress2.jpg"
     },
     {
       "userId": 1,
       "id": 6,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Mini Pizza - Gesso3D",
+      "body": "Placa de gesso 3D com desenho de mini pizzas",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/mini_pizza_fdg_178.jpg",
+      // "img2": "/mini_pizza2.jpg"
     },
     {
       "userId": 1,
       "id": 7,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Modulo R - Gesso3D",
+      "body": "Placa de gesso 3D com estilo modulo R",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/modulo_r_fdg_62.jpg",
+      "img2": "/modulor2.jpg"
     },
     {
       "userId": 1,
       "id": 8,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Quadradinho - Gesso3D",
+      "body": "Placa de gesso 3D com desenho de quadradinhos",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/quadradinho_fdg_39.jpg",
+      "img2": "/quadradinho2.jpg"
     },
     {
       "userId": 1,
       "id": 9,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Ripadinho - Gesso3D",
+      "body": "Placa de gesso 3D com estilo ripadinho",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/ripadinho_fdg_180.jpg",
+      "img2": "/ripadinho2.jpg"
     },
     {
       "userId": 1,
       "id": 10,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Roseira - Gesso3D",
+      "body": "Placa de gesso 3D com desenho estilo roseira",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/roseira_fdg_119.jpg",
+      "img2": "/roseira2.jpg"
     },
     {
       "userId": 1,
       "id": 11,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Teen Block - Gesso3D",
+      "body": "Placa de gesso 3D estilo Teen Block",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/teen_block_fdg_35.jpg",
+      "img2": "/teen2.jpg"
     },
     {
       "userId": 1,
       "id": 12,
-      "title": "Bolhas - Gesso3D",
-      "body": "Placa de gesso 3D com estilo de bolhas",
+      "title": "Tijolinho Concavo - Gesso3D",
+      "body": "Placa de gesso 3D com estilo de tijolinhos concavos",
       "footer": "29x29",
-      "img": "/bolhas_fdg_20.jpg"
+      "img": "/tijolinho_concavo_fdg_36.jpg",
+      "img2": "/tijolinho2.jpg"
     },
   ]
 
@@ -126,7 +138,10 @@ const { post } = Astro.props
   <section class="my-12">
     <div class="container">
       <h1>{post.title}</h1><br />
-      <img src={post.img} width="500px"/>
+      <div class="grid lg:grid-cols-2 gap-2 xs:grid-cols-1 sm:grid-cols-2 container">
+        <img src={post.img} width="400px"/>
+        <img src={post.img2} width="400px"/>
+      </div>
       <p>{post.footer}</p>
     </div>
   </section>
